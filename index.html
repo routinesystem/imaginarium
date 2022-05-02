@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html{
+                background-color: black;
+            }
+            #homebg{
+                opacity: 40%;
+            }
+            .video {
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                margin-top: 0px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .filmContainer {
+                position: absolute;
+                left: 0%;
+                transform: translateX(-50%);
+                z-index:-1;
+            }
+            #menu {
+                display:block;
+                top: 10px;
+                height: 40px;
+                width: 40px;
+                padding-left: 10px;
+            }
+            #faq {
+                display:block;
+                height: 40px;
+                width: 40px;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            #faqtext{
+                position:absolute;
+                margin-left: 10vw;
+                margin-top: 1vw;
+                height:30vh;
+            }
+            #troubleshoot{
+                visibility: hidden;
+                width:100vw; 
+            }
+            #creditspng{
+                position:absolute;
+                margin-left: 57vw;
+                margin-top: 33vw;
+                height:30vh;
+            }
+            #credits{
+                visibility: hidden;
+                width:100vw;
+            }
+            #imaginariumtitle {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50vw;
+            }
+            #enterasset{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 10%;
+            }
+            #warning {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 30%;
+            }
+            #titleblock {
+                position:absolute;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 25vh;
+                width: 100vw;
+            }
+            #enterblock{
+                position:relative;
+                width:100vh;
+            }
+            #partyButton{
+                width: 100px;
+            }
+            #riotButton{
+                width: 100px;
+            }
+            #groceryButton{
+                width: 100px;
+            }
+            #buttonPlacement{
+                top: 58vh;
+                display: flex;
+                position: relative;
+                flex-direction: row;
+                justify-content: center;
+                visibility: hidden;
+                gap: 15vw;
+            }
+            #enterscreen{
+                position:absolute;
+                margin-top: 0px;
+                height:100vh;
+                width:100vw;
+            }
+        </style>
+    </head>
+<body>
+    <div id="filmFive" class="filmContainer">
+        <video id="videoFive" class="video" style="visibility:hidden">
+            <source src="5. death sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="filmFourC" class="filmContainer">
+        <video id="videoFourC" class="video" style="visibility:hidden">
+            <source src="4C. grocery store sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="filmFourB" class="filmContainer">
+        <video id="videoFourB" class="video" style="visibility:hidden">
+            <source src="4B.riot sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div id="filmFourA" class="filmContainer">
+        <video id="videoFourA" class="video" style="visibility:hidden">
+            <source src="4A. party sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="filmThree" class="filmContainer">
+        <video id="videoThree" class="video" style="visibility:hidden">
+            <source src="3. post-choice exit sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+    <div id="filmTwo" class="filmContainer">
+        <video id="videoTwo" class="video" style="visibility:hidden" loop>
+            <source src="2. choiceImage.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+    <div id="filmOne" class="filmContainer">
+        <video id="videoOne" class="video" style="visibility:hidden">
+            <source src="1. pre-choice sequence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+
+<div id="enterscreen">
+   
+    <div class="filmContainer">
+        <video id="homebg" class="video" autoplay muted loop>
+            <source src="enter screen street.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="enterblock">
+
+        <div id="titleblock">
+            <img id="imaginariumtitle" src='titlecard.png'/>
+            <img id="enterasset" src='enterasset.png' onclick="start()"/>
+            <img id="warning" src="content sensory warning.png"/>
+        </div>
+        <div id="credits">
+            <img id='creditspng' src='creditsFinal.png'/>
+        </div>
+        
+        <img id="menu" src='menuicon.png' onclick="toggleCredits()"/>
+        <img id="faq" src='question mark asset.png' onclick="toggleFAQ()"/>
+        <div id="troubleshoot">
+            <img id="faqtext" src="faqFinal.png"/>
+        </div>
+    </div>
+</div>
+
+<div id="buttonPlacement">
+    <img id="partyButton" src="choiceButton.png" onclick="startParty()"/>
+    <img id="groceryButton" src="choiceButton.png" onclick="startShopping()"/>
+    <img id="riotButton" src="choiceButton.png" onclick="startRiot()"/>
+</div>
+
+<script>
+    function toggleCredits() {
+        if (document.getElementById("credits").style.visibility == "visible") {
+            document.getElementById("credits").style.visibility = "hidden";
+            document.getElementById("titleblock").style.visibility = "visible";
+            document.getElementById("faq").style.visibility = "visible";
+            document.getElementById("faq").style.opacity = "100%";
+        } else {
+            document.getElementById("credits").style.visibility = "visible";
+            document.getElementById("titleblock").style.visibility = "hidden";
+            document.getElementById("faq").style.opacity = "30%";
+            document.getElementById("faqtext").style.visibility = "hidden";
+            document.getElementById("menu").style.opacity = "100%";
+        }
+    }
+
+    function toggleFAQ() {
+        if (document.getElementById("faqtext").style.visibility == "visible") {
+            document.getElementById("faqtext").style.visibility = "hidden";
+            document.getElementById("titleblock").style.visibility = "visible";
+            document.getElementById("menu").style.visibility = "visible";
+            document.getElementById("menu").style.opacity = "100%";
+        } else {
+            document.getElementById("faqtext").style.visibility = "visible";
+            document.getElementById("titleblock").style.visibility = "hidden";
+            document.getElementById("menu").style.opacity = "30%";
+            document.getElementById("credits").style.visibility = "hidden";
+            document.getElementById("faq").style.opacity = "100%";
+        }
+    }
+
+    function start() {
+        document.getElementById("enterscreen").style.visibility = "hidden";
+        document.getElementById("titleblock").style.visibility = "hidden";
+        document.getElementById("menu").style.visibility = "hidden";
+        document.getElementById("faq").style.visibility = "hidden";
+        document.getElementById("videoOne").style.visibility = "visible";
+        document.getElementById("videoOne").play();
+    }
+
+    document.getElementById('videoOne').addEventListener('ended',playTwo,false);
+    function playTwo(e) {
+        document.getElementById("videoOne").style.visibility = "hidden";
+        document.getElementById("videoTwo").style.visibility = "visible";
+        document.getElementById("videoTwo").play();
+        document.getElementById("buttonPlacement").style.visibility = "visible";
+    }
+
+    function startParty() {
+        document.getElementById("videoTwo").style.visibility = "hidden";
+        document.getElementById("videoTwo").muted = "true";
+        document.getElementById("videoFourA").style.visibility = "visible";
+        document.getElementById("videoFourA").play();
+        document.getElementById("buttonPlacement").style.visibility = "hidden";
+    }
+
+    function startShopping() {
+        document.getElementById("videoTwo").style.visibility = "hidden";
+        document.getElementById("videoTwo").muted = "true";
+        document.getElementById("videoFourB").style.visibility = "visible";
+        document.getElementById("videoFourB").play();
+        document.getElementById("buttonPlacement").style.visibility = "hidden";
+    }
+
+    function startRiot() {
+        document.getElementById("videoTwo").style.visibility = "hidden";
+        document.getElementById("videoTwo").muted = "true";
+        document.getElementById("videoFourC").style.visibility = "visible";
+        document.getElementById("videoFourC").play();
+        document.getElementById("buttonPlacement").style.visibility = "hidden";
+    }
+
+    document.getElementById('videoFourA').addEventListener('ended',playFiveA,false);
+    function playFiveA(e) {
+        document.getElementById("videoFourA").style.visibility = "hidden";
+        document.getElementById("videoFive").style.visibility = "visible";
+        document.getElementById("videoFive").play();
+    }
+
+    document.getElementById('videoFourB').addEventListener('ended',playFiveB,false);
+    function playFiveB(e) {
+        document.getElementById("videoFourB").style.visibility = "hidden";
+        document.getElementById("videoFive").style.visibility = "visible";
+        document.getElementById("videoFive").play();
+    }
+
+    document.getElementById('videoFourC').addEventListener('ended',playFiveC,false);
+    function playFiveC(e) {
+        document.getElementById("videoFourC").style.visibility = "hidden";
+        document.getElementById("videoFive").style.visibility = "visible";
+        document.getElementById("videoFive").play();
+    }
+
+    document.getElementById('videoFive').addEventListener('ended',playAgain,false);
+    function playAgain(e) {
+        document.getElementById("videoFive").style.visibility = "hidden";
+        document.getElementById("videoOne").style.visibility = "visible";
+        document.getElementById("videoOne").play();
+    }
+
+</script>
+
+</body>
+</html>
