@@ -129,7 +129,7 @@
 
     <div id="filmFourB" class="filmContainer">
         <video id="videoFourB" class="video" style="visibility:hidden">
-            <source src="4B.riot sequence.mp4" type="video/mp4">
+            <source src="4B. riot sequence.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
     </div>
@@ -194,8 +194,8 @@
 
 <div id="buttonPlacement">
     <img id="partyButton" src="choiceButton.png" onclick="startParty()"/>
-    <img id="groceryButton" src="choiceButton.png" onclick="startShopping()"/>
     <img id="riotButton" src="choiceButton.png" onclick="startRiot()"/>
+    <img id="groceryButton" src="choiceButton.png" onclick="startShopping()"/>
 </div>
 
 <script>
@@ -257,16 +257,16 @@
     function startShopping() {
         document.getElementById("videoTwo").style.visibility = "hidden";
         document.getElementById("videoTwo").muted = "true";
-        document.getElementById("videoFourB").style.visibility = "visible";
-        document.getElementById("videoFourB").play();
+        document.getElementById("videoFourC").style.visibility = "visible";
+        document.getElementById("videoFourC").play();
         document.getElementById("buttonPlacement").style.visibility = "hidden";
     }
 
     function startRiot() {
         document.getElementById("videoTwo").style.visibility = "hidden";
         document.getElementById("videoTwo").muted = "true";
-        document.getElementById("videoFourC").style.visibility = "visible";
-        document.getElementById("videoFourC").play();
+        document.getElementById("videoFourB").style.visibility = "visible";
+        document.getElementById("videoFourB").play();
         document.getElementById("buttonPlacement").style.visibility = "hidden";
     }
 
